@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Semestralni prace</title>
+</head>
+<body>
+    <header>
+        <h1>Dokumentace semestrální práce z předmětu Značkovací jazyky</h1>
+    </header>
+    <nav>
+        <h2>Navigace</h2>
+        <ul>
+            <li><a href="#uvod">Úvod</a></li>
+            <li><a href="#metodika">Metodika - Použité nástroje</a></li>
+            <li><a href="#popis">Popis elementů a atributů</a></li>
+            <li><a href="#transf">Popis transformace</a></li>
+            <li><a href="#zaver">Závěr</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="uvod">
+            <article>
+                <header>
+                    <h2>Úvod</h2>
+                </header>
+                <p>
+                    Jako téma semestrálního projektu jsem si vybral nastavení hry.
+                    Toto téma jsem si zvolil protože je mi nejbližší a myslím si, že prakticky využitelné.
+                </p>
+                <p>XML soubor slouží ke konfiguraci dané hry. Pomocí XML lze nastavit kvalitu grafického zobrazení, kvalitu zvuku a obecné informace o uživateli.</p>
+            </article>
+        </section>
+
+        <section id="metodika">
+            <article>
+                <header>
+                    <h2>Metodika</h2>
+                </header>
+                <h3>Použité nástroje</h3>
+                <p>
+                    Pro tvorbu daného programu jsem využil <a href="https://www.visualstudio.com/cs/">Microsoft Visual Studio</a> a internetový prohlížeč <a href="https://www.google.com/chrome/browser/desktop/index.html">Google chrome</a>,
+                    dále jsem využil stránky <a href="https://www.w3.org/">W3.org</a> a <a href="https://www.w3schools.com/">w3Schools</a>.
+                </p>
+                <p><a href="https://www.w3.org/">W3.org</a> jsem zároveň požil jakož to oficiální validátor.</p>
+            </article>
+        </section>
+
+        <section id="popis">
+            <article>
+                <header>
+                    <h2>Popis elementů a atributů</h2>
+                </header>
+                <h3>Použité elementy</h3>
+                <table border="1" id="elementy" title="Tabulka elementů">
+                    <thead>
+                        <tr>
+                            <th>Název Elementu</th>
+                            <th>Popis</th>
+                            <th>Sémantické omezení</th>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>tutorial</td>
+                            <td>Udává, jestli je zaplý tutorial</td>
+                            <td>Hodnoty true a false</td>
+                        </tr>
+                        <tr>
+                            <td>developer</td>
+                            <td>Udává jaká vývojář se podílel na hře</td>
+                            <td>Bez omezení</td>
+                        </tr>
+                        <tr>
+                            <td>releaseDate</td>
+                            <td>Udává kdy byla hra vydána</td>
+                            <td>datum</td>
+                        </tr>
+                        <tr>
+                            <td>version</td>
+                            <td>Aktuální  verze hry</td>
+                            <td>Bez omezení</td>
+                        </tr>
+                        <tr>
+                            <td>language</td>
+                            <td>Jazyk hry</td>
+                            <td>English-Czech-Deutch-Russia</td>
+                        </tr>
+                        <tr>
+                            <td>sound</td>
+                            <td>Zapnutí/vypnutí zvuků</td>
+                            <td>Hodnoty true a false</td>
+                        </tr>
+                        <tr>
+                            <td>author</td>
+                            <td>Udává autora hry</td>
+                            <td>Bez omezení</td>
+                        </tr>
+                        <tr>
+                            <td>autosave</td>
+                            <td>Automatické ukládání</td>
+                            <td>Hodnoty true a false</td>
+                        </tr>
+                        <tr>
+                            <td>gama</td>
+                            <td>Míra kanálu gama</td>
+                            <td>Nabývá hodnot 0-100</td>
+                        </tr>
+                        <tr>
+                            <td>displayMode</td>
+                            <td>Určuje zobrazení hry</td>
+                            <td>Fullscreen-Fullscreen(Windowed)-Window</td>
+                        </tr>
+                        <tr>
+                            <td>resolution</td>
+                            <td>Rozlišení obrazovky</td>
+                            <td>1920 X 1200 - 1920 X 1080 - 1680 X 1050 - 1600 X 1200 - 1400 X 1050 - 1366 X 768</td>
+                        </tr>
+                        <tr>
+                            <td>ratio</td>
+                            <td>Poměr stran obrazovky</td>
+                            <td>16:9 - 4:3</td>
+                        </tr>
+                        <tr>
+                            <td>renderDistance</td>
+                            <td>Vzdálenost vykreslování</td>
+                            <td>Nabývá hodnot 0-100</td>
+                        </tr>
+                        <tr>
+                            <td>waterDetail</td>
+                            <td>Detaily vody</td>
+                            <td>Nabývá hodnot 0-100</td>
+                        </tr>
+                        <tr>
+                            <td>blood</td>
+                            <td>Zapne/vypne krev</td>
+                            <td>Hodnoty true a false</td>
+                        </tr>
+                        <tr>
+                            <td>otherPlayersDisplay</td>
+                            <td>Kvalita zobrazení ostatních hráčů</td>
+                            <td>Bez omezení</td>
+                        </tr>
+                        <tr>
+                            <td>hideUI</td>
+                            <td>Umožní schovat UI</td>
+                            <td>Nabývá hodnot true a false</td>
+                        </tr>
+                        <tr>
+                            <td>resolution</td>
+                            <td>Nastavení rozlišení textur</td>
+                            <td>Low-Medium-High-Ultra</td>
+                        </tr>
+                        <tr>
+                            <td>reflection</td>
+                            <td>nastavení kvality odlesků</td>
+                            <td>Low-Medium-High-Ultra</td>
+                        </tr>
+                        <tr>
+                            <td>shadows</td>
+                            <td>Nastavení kvality stínů</td>
+                            <td>Low-Medium-High-Ultra</td>
+                        </tr>
+                        <tr>
+                            <td>improveOldTextures</td>
+                            <td>Zapne možnost vylepšení starých textur</td>
+                            <td>Nabývá hodnot true a false</td>
+                        </tr>
+                        <tr>
+                            <td>shadows</td>
+                            <td>Kvalita stínů</td>
+                            <td>Low-Medium-High-Ultra</td>
+                        </tr>
+                        <tr>
+                            <td>smokeQuality</td>
+                            <td>Nastavení kvality kouře</td>
+                            <td>Low-Medium-High-Ultra</td>
+                        </tr>
+                        <tr>
+                            <td>effectDetail</td>
+                            <td>Detaily efektů</td>
+                            <td>Nabývá hodnoty 0-100</td>
+                        </tr>
+                        <tr>
+                            <td>reflection</td>
+                            <td>Úroveň odlesku</td>
+                            <td>Low-Medium-High-Ultra</td>
+                        </tr>
+                        <tr>
+                            <td>otherPlayersEffect</td>
+                            <td>Procentuální zobrazení efektů jiných hráčů</td>
+                            <td>nabývá hodnoty 0-100</td>
+                        </tr>
+                        <tr>
+                            <td>fireQuality</td>
+                            <td>Kvalita ohně</td>
+                            <td>Low-Medium-High-Ultra</td>
+                        </tr>
+                        <tr>
+                            <td>channel</td>
+                            <td>Vybere kanál zvuku</td>
+                            <td>Bez omezení</td>
+                        </tr>
+                        <tr>
+                            <td>cache</td>
+                            <td>Míra cache</td>
+                            <td>Bez omezení</td>
+                        </tr>
+                        <tr>
+                            <td>menuMusic</td>
+                            <td>Míra hudby v menu</td>
+                            <td>nabývá hodnot 0-100</td>
+                        </tr>
+                        <tr>
+                            <td>effects</td>
+                            <td>Hlasitost efektů</td>
+                            <td>Nezáporný</td>
+                        </tr>
+                        <tr>
+                            <td>backgroundMusic</td>
+                            <td>Hudba na pozadí</td>
+                            <td>Nezáporný</td>
+                        </tr>
+                        <tr>
+                            <td>voices</td>
+                            <td>Zesílení hlasů</td>
+                            <td>nabávý hodnot 0-100</td>
+                        </tr>
+                        <tr>
+                            <td>volume</td>
+                            <td>zesílení voicechatu</td>
+                            <td>nabávý hodnot 0-100</td>
+                        </tr>
+                        <tr>
+                            <td>microphoneSensitivity</td>
+                            <td>Citlivost mikrofonu</td>
+                            <td>Nabývá hodnot 0-100</td>
+                        </tr>
+                        <tr>
+                            <td>mode</td>
+                            <td>Určuje mod mikrofonu</td>
+                            <td>Voice detection-PTT-Always on</td>
+                        </tr>
+                        <tr>
+                            <td>gamemode</td>
+                            <td>Určuje režim hraní</td>
+                            <td>Bez omezení</td>
+                        </tr>
+                        <tr>
+                            <td>mouseSensitivity</td>
+                            <td>Citlivostmyši</td>
+                            <td>Nabývá hodnot 0-100</td>
+                        </tr>
+                        <tr>
+                            <td>autoaim</td>
+                            <td>Zapnutí možnosti autoaim</td>
+                            <td>Nabývá hodnoty true a false</td>
+                        </tr>
+                        <tr>
+                            <td>comboStop</td>
+                            <td>zapnutí možnosti combo stop</td>
+                            <td>Nabývá hodnoty true a false</td>
+                        </tr>
+                        <tr>
+                            <td>autorun</td>
+                            <td>Zapnutí možnosti autorun</td>
+                            <td>nabývá hodnoty true a false</td>
+                        </tr>
+                        <tr>
+                            <td>server</td>
+                            <td>Určuje server, na kterém se hraje</td>
+                            <td>Bez omezení</td>
+                        </tr>
+                        <tr>
+                            <td>preferedChannel</td>
+                            <td>určuje preferovaný kanál</td>
+                            <td>Nezáporná celá čísla</td>
+                        </tr>
+                        <tr>
+                            <td>maxPing</td>
+                            <td>Maximální připustný ping serveru</td>
+                            <td>Nezáporná celá čísla</td>
+                        </tr>
+                        <tr>
+                            <td>firtname</td>
+                            <td>Jméno hráče</td>
+                            <td>Není nijak omezeno</td>
+                        </tr>
+                        <tr>
+                            <td>email</td>
+                            <td>Email hráče</td>
+                            <td>Ve formátu email</td>
+                        </tr>
+                        <tr>
+                            <td>age</td>
+                            <td>Věk</td>
+                            <td>Celočíselný údaj větší jak nula</td>
+                        </tr>
+                        <tr>
+                            <td>nation</td>
+                            <td>Národnost</td>
+                            <td>Bezomezení</td>
+                        </tr>
+                        <tr>
+                            <td>firstName</td>
+                            <td>jméno hráče</td>
+                            <td>Bez omezení</td>
+                        </tr>
+                        <tr>
+                            <td>last name</td>
+                            <td>Příjmení hráče</td>
+                            <td>Bez omezení</td>
+                        </tr>
+                        <tr>
+                            <td>gender</td>
+                            <td>Pohlaví hráče</td>
+                            <td>Male-Female</td>
+                        </tr>
+                        <tr>
+                            <td>picture</td>
+                            <td>Obrázek hráče</td>
+                            <td>Bez omezení</td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th>Název Atributu</th>
+                            <th>Popis</th>
+                            <th>Sémantické omezení</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>lang</td>
+                            <td>Jazyk hry</td>
+                            <td>English-Czech-Deutch-Russia</td>
+                        </tr>
+                        <tr>
+                            <td>version</td>
+                            <td>Verze hry</td>
+                            <td>Nastaveno pevně</td>
+                        </tr>
+                        <tr>
+                            <td>lowFps</td>
+                            <td>Sníží kvalitu hry při malých fps</td>
+                            <td>nabývá hodnot true a false</td>
+                        </tr>
+                        <tr>
+                            <td>inBattle</td>
+                            <td>Sníží kvalitu v bitvě</td>
+                            <td>nabývá hodnot true a false</td>
+                        </tr>
+                        <tr>
+                            <td>output</td>
+                            <td>nastavení výstupu zvuku</td>
+                            <td>Bez omezení</td>
+                        </tr>
+                        <tr>
+                            <td>masterVolume</td>
+                            <td>Kontrola celkové hlasitosti</td>
+                            <td>Nabývá hodnot 0-100</td>
+                        </tr>
+                        <tr>
+                            <td>output</td>
+                            <td>nastavení výstupu zvuku</td>
+                            <td>Bez omezení</td>
+                        </tr>
+                        <tr>
+                            <td>enabled</td>
+                            <td>Zapínání voicechatu</td>
+                            <td>Nabývá hodnot true a false</td>
+                        </tr>
+                        <tr>
+                            <td>imput</td>
+                            <td>Vstup voicechatu</td>
+                            <td>Bez omezení</td>
+                        </tr>
+                        <tr>
+                            <td>mouse</td>
+                            <td>Zapnutí quick comba na myši</td>
+                            <td>Nabývá hodnoty true a false</td>
+                        </tr>
+                        <tr>
+                            <td>keyboard</td>
+                            <td>Zapnutí quick comba na klávesnici</td>
+                            <td>nabývá hodnoty true a false</td>
+                        </tr>
+
+                    </tbody>
+
+
+                </table>
+            </article>
+        </section>
+
+        <section id="transf">
+            <article>
+                <header>
+                    <h2>Popis transformace</h2>
+                </header>
+                <p>
+                   Pomocí transformace jsem z XML souboru vybral a vypsal informace o hře a informace o hráči.
+            </article>
+        </section>
+
+
+        <section id="zaver">
+            <article>
+                <header>
+                    <h2>Závěr</h2>
+                </header>
+                <p>
+                  Při tvorbě této práce jsem se naučil jak spravně pracovat s XML a jak provádět jeho transformaci.Také jsem se naučil něco nového z HTML.
+                </p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>Vytvořil: <strong>Lukáš Douběta</strong> | Česká Zemědělská univerzita Praha, dne 20.4.2017</p>
+    </footer>
+</body>
+</html>

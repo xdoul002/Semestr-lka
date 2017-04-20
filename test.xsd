@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="settings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="game">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="tutorial" type="switch" />
+              <xs:element name="developer" type="xs:string" />
+              <xs:element name="releaseDate" type="xs:date" />
+              <xs:element name="version" type="xs:string" />
+              <xs:element name="language" type="language" />
+              <xs:element name="sound" type="switch" />
+              <xs:element name="author" type="xs:string" />
+              <xs:element name="autosave" type="switch" />
+              <xs:element name="subtitles">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="switch">
+                      <xs:attribute name="lang" type="language" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="version" type="xs:decimal" use="required" fixed="2.10" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="display">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="gama" type="To-100" />
+              <xs:element name="displayMode" type="mode" />
+              <xs:element name="resolution" type="resolution" />
+              <xs:element name="ratio" type="ratio" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="graphics">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="enviroment">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="renderDistance" type="To-100" />
+                    <xs:element name="waterDetail" type="To-100" />
+                    <xs:element name="blood" type="switch" />
+                    <xs:element name="otherPlayersDisplay" type="xs:string" />
+                    <xs:element name="hideUI" type="switch" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="textures">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="resolution" type="uroven" />
+                    <xs:element name="reflection" type="uroven" />
+                    <xs:element name="shadows" type="uroven" />
+                    <xs:element name="improveOldTextures" type="switch" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="effects">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="shadows" type="uroven" />
+                    <xs:element name="smokeQuality" type="uroven" />
+                    <xs:element name="effectDetail" type="To-100" />
+                    <xs:element name="reflection" type="uroven" />
+                    <xs:element name="otherPlayersEffects" type="To-100" />
+                    <xs:element name="fireQuality" type="uroven" />
+                    <xs:element name="reduceEffects">
+                      <xs:complexType>
+                        <xs:attribute name="LowFps" type="switch" use="required" />
+                        <xs:attribute name="InBattle" type="switch" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="mode" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sound">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="output">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="channel" type="xs:string" />
+                    <xs:element name="cache" type="xs:string" />
+                  </xs:sequence>
+                  <xs:attribute name="output" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="volume">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="menuMusic" type="To-100" />
+                    <xs:element name="effects" type="xs:unsignedByte" />
+                    <xs:element name="backgroundMusic" type="xs:unsignedByte" />
+                    <xs:element name="voices" type="To-100" />
+                    <xs:element name="voicechat">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="volume" type="To-100" />
+                          <xs:element name="microphoneSensitivity" type="To-100" />
+                          <xs:element name="mode" type="voicechat" />
+                        </xs:sequence>
+                        <xs:attribute name="enabled" type="switch" use="required" />
+                        <xs:attribute name="imput" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="masterVolume" type="To-100" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="controls">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="gamemode" type="xs:string" />
+              <xs:element name="mouseSensitivity" type="To-100" />
+              <xs:element name="autoaim" type="switch" />
+              <xs:element name="comboStop" type="switch" />
+              <xs:element name="autorun" type="switch" />
+              <xs:element name="quickCombo">
+                <xs:complexType>
+                  <xs:attribute name="mouse" type="xs:string" use="required" />
+                  <xs:attribute name="keyboard" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="multiplayer">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="server" type="xs:string" />
+              <xs:element name="preferedChannel" type="xs:unsignedInt" />
+              <xs:element name="maxPing" type="xs:unsignedInt" />
+            </xs:sequence>
+            <xs:attribute name="port" type="xs:unsignedShort" use="required" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="profile">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="email" type="email" />
+              <xs:element name="age" type="nezapor" />
+              <xs:element name="nation" type="xs:string" />
+              <xs:element name="firstName" type="xs:string" />
+              <xs:element name="lastName" type="xs:string" />
+              <xs:element name="gender" type="pohlavi" />
+              <xs:element name="picture" type="xs:string" />
+            </xs:sequence>
+            <xs:attribute name="nickname" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:simpleType name="switch">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="True"/>
+      <xs:enumeration value="False"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="language">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="English"/>
+      <xs:enumeration value="Czech"/>
+      <xs:enumeration value="Deutsch"/>
+      <xs:enumeration value="Rusia"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--Vek-->
+  <xs:simpleType name="nezapor">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--Volba hodnot 0-100-->
+  <xs:simpleType name="To-100">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--Volba hodnot 0-10-->
+  <xs:simpleType name="To-10">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--Pohlavi-->
+  <xs:simpleType name="pohlavi">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Male"/>
+      <xs:enumeration value="Female"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--Urovne-->
+  <xs:simpleType name="uroven">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Low"/>
+      <xs:enumeration value="Medium"/>
+      <xs:enumeration value="High"/>
+      <xs:enumeration value="Ultra"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--Rozlišení-->
+  <xs:simpleType name="resolution">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1920 X 1200"/>
+      <xs:enumeration value="1920 X 1080"/>
+      <xs:enumeration value="1680 X 1050"/>
+      <xs:enumeration value="1600 X 1200"/>
+      <xs:enumeration value="1400 X 1050"/>
+      <xs:enumeration value="1366 X 768"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--Poměr stran monitoru-->
+  <xs:simpleType name="ratio">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="16:9"/>
+      <xs:enumeration value="4:3"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--Poměr stran monitoru-->
+  <xs:simpleType name="mode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Fullscreen"/>
+      <xs:enumeration value="Fullscreen(windowed)"/>
+      <xs:enumeration value="Window"/>
+    </xs:restriction>
+  </xs:simpleType>
+ 
+
+  <!--Poměr stran monitoru-->
+  <xs:simpleType name=" voicechat">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Voice detection"/>
+      <xs:enumeration value="Push-To-Talk"/>
+      <xs:enumeration value="Always on"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="email">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[^@]+@[^\.]+\..+"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

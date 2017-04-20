@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="Transformace.xsl"?>
+<!--"Odkaz na github: https://github.com/xdoul002/Semestr-lka"-->
+<settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="test.xsd"> 
+<!--Obecné nastavení-->
+  <game version="2.10">
+    <tutorial>True</tutorial>
+    <developer>Devcat</developer>
+    <releaseDate>2017-04-01</releaseDate>
+    <version>EU</version>
+    <language>English</language>
+    <sound>False</sound>
+    <author>ff</author>
+    <autosave>True</autosave>
+    <subtitles lang="Czech">False</subtitles>
+  </game>
+  <!--Nastavení displaye-->
+  <display>
+    <gama>50</gama>
+    <displayMode>Fullscreen</displayMode>
+    <resolution>1920 X 1200</resolution>
+    <ratio>16:9</ratio>
+  </display>
+  <!--Nastavení grafiky-->
+  <graphics mode="custom">
+    <enviroment>
+      <renderDistance>25</renderDistance>
+      <waterDetail>8</waterDetail>
+      <blood>True</blood>
+      <otherPlayersDisplay>normal</otherPlayersDisplay>
+      <hideUI>False</hideUI>
+    </enviroment>
+    <textures>
+      <resolution>High</resolution>
+      <reflection>Medium</reflection>
+      <shadows>Medium</shadows>
+      <improveOldTextures>True</improveOldTextures>
+    </textures>
+    <effects>
+      <shadows>Medium</shadows>
+      <smokeQuality>High</smokeQuality>
+      <effectDetail>80</effectDetail>
+      <reflection>High</reflection>
+      <otherPlayersEffects>20</otherPlayersEffects>
+      <fireQuality>Low</fireQuality>
+      <reduceEffects LowFps="True" InBattle="False"></reduceEffects>
+    </effects>
+  </graphics>
+  <!--Nastavení zvuku-->
+  <sound>
+    <output output="System default">
+      <channel>High(64)</channel>
+      <cache>Large(64)</cache>
+    </output>
+    <volume masterVolume ="100">
+      <menuMusic>50</menuMusic>
+      <effects>100</effects>
+      <backgroundMusic>100</backgroundMusic>
+      <voices>80</voices>
+      <voicechat enabled="True" imput="System defalt">
+        <volume>80</volume>
+        <microphoneSensitivity>50</microphoneSensitivity>
+        <mode>Voice detection</mode>
+      </voicechat>
+    </volume>
+  </sound>
+  <!--Ovládání-->
+  <controls>
+    <gamemode>Keyboard</gamemode>
+    <mouseSensitivity>50</mouseSensitivity>
+    <autoaim>True</autoaim>
+    <comboStop>True</comboStop>
+    <autorun>False</autorun>
+    <quickCombo mouse="disabled" keyboard="disabled"></quickCombo>
+  </controls>
+  <!--Server-->
+  <multiplayer port="8090">
+    <server>EU</server>
+    <preferedChannel>191</preferedChannel>
+    <maxPing>500</maxPing>
+  </multiplayer>
+  <!--Profil-->
+  <profile nickname="Nickname">
+    <email>email@gmail.com</email>
+    <age>24</age>
+    <nation>Cz</nation>
+    <firstName>Lukas</firstName>
+    <lastName>Novak</lastName>
+    <gender>Male</gender>
+    <picture>https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT1dwxTQ2Ul4V0LS7l3NyKJvYGXwh_5gwSrJaZTR_8WVBy1y1QYyLnIyyw</picture>
+  </profile>
+
+</settings>
